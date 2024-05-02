@@ -7,16 +7,24 @@ function Book(title, author, pages, read) {
     this.read = read;
 }
 
-const book1 = new Book("A Clash of Kings", "George R.R", 761, true);
-const book2 = new Book("A Clash of Knights", "George R.R", 761, true);
+const book1 = new Book("A Clash of Kings", "George R.R Martin", 761, "yes");
+const book2 = new Book("A Storm of Swords", "George R.R Martin", 973, "yes");
 
+function addToLibrary() {
 
-function addToLibrary(object) {
-    if (object instanceof Book) {
-        myLibrary.push(object)
-        return myLibrary;
-    }
+    const titleField = document.querySelector("#title").value;
+    const authorField = document.querySelector("#author").value;
+    const pagesField = parseInt(document.querySelector("#pages").value);
+    const readField = document.querySelector("#read").value;
+    // const submitButton = document.querySelector("#submit");
+    
+   let userBook = new Book (titleField, authorField, pagesField, readField);
+ 
+  //push it into the myLibrary array as the 3rd item
+	myLibrary.push(book1, book2, userBook);
+    return myLibrary;
+    
 }
 
-console.log(addToLibrary(book1, book2));
 
+console.log(addToLibrary());
