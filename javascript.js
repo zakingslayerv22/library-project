@@ -31,14 +31,35 @@ addToLibrary();
 function displayBooks() {
     for (var book of myLibrary) {
         console.log(book.author);
+
+        const cardsContainer = document.querySelector(".books");
+
+        const bookCard = document.createElement("div");
+        bookCard.classList.add("book-card");
+
+        const titleDiv = document.createElement("div");
+        titleDiv.textContent = book.title;
+        titleDiv.classList.add("title-div");
+        bookCard.appendChild(titleDiv);
+
+        const authorDiv = document.createElement("div");
+        authorDiv.textContent = book.author;
+        authorDiv.classList.add("author-div");
+        bookCard.appendChild(authorDiv);
+
+        const pagesDiv = document.createElement("div");
+        pagesDiv.textContent = book.pages;
+        pagesDiv.classList.add("pages-div");
+        bookCard.appendChild(pagesDiv);
+
+        const readDiv = document.createElement("div");
+        readDiv.textContent = book.read;
+        readDiv.classList.add("read-div");
+        bookCard.appendChild(readDiv);
+
+        cardsContainer.appendChild(bookCard);
     }
-
-    const cardsContainer = document.querySelector(".books");
-    const bookCard = document.createElement("div");
-
-    bookCard.classList.add("book-card");
-
-    cardsContainer.appendChild(bookCard);
+    
 }
 
 
