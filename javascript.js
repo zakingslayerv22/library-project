@@ -24,7 +24,22 @@ function addToLibrary() {
 	myLibrary.push(book1, book2, userBook);
     return myLibrary;
     
+};
+
+addToLibrary();
+
+function displayBooks() {
+    for (var book of myLibrary) {
+        console.log(book.author);
+    }
+
+    const cardsContainer = document.querySelector(".books");
+    const bookCard = document.createElement("div");
+
+    bookCard.classList.add("book-card");
+
+    cardsContainer.appendChild(bookCard);
 }
 
 
-console.log(addToLibrary());
+displayBooks()
