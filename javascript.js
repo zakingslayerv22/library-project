@@ -9,30 +9,16 @@ function Book(title, author, pages, read) {
 
 const book1 = new Book("A Clash of Kings", "George R.R Martin", 761, "yes");
 const book2 = new Book("A Storm of Swords", "George R.R Martin", 973, "yes");
+let cardsContainer;
 
-function addToLibrary() {
+myLibrary.push(book1, book2)
 
-    const titleField = document.querySelector("#title").value;
-    const authorField = document.querySelector("#author").value;
-    const pagesField = parseInt(document.querySelector("#pages").value);
-    const readField = document.querySelector("#read").value;
-    // const submitButton = document.querySelector("#submit");
-    
-   let userBook = new Book (titleField, authorField, pagesField, readField);
- 
-  //push it into the myLibrary array as the 3rd item
-	myLibrary.push(book1, book2, userBook);
-    return myLibrary;
-    
-};
-
-addToLibrary();
 
 function displayBooks() {
     for (var book of myLibrary) {
         console.log(book.author);
 
-        const cardsContainer = document.querySelector(".books");
+        cardsContainer = document.querySelector(".books");
 
         const bookCard = document.createElement("div");
         bookCard.classList.add("book-card");
@@ -58,9 +44,66 @@ function displayBooks() {
         bookCard.appendChild(readDiv);
 
         cardsContainer.appendChild(bookCard);
-    }
-    
+    } 
 }
 
+displayBooks();
 
-displayBooks()
+
+function addToLibrary() {
+
+    let inputArray = [];
+
+    //dialog
+    const bookDialogBox = document.querySelector("#bookDialog");
+    const showDialogBox = document.querySelector("#showDialog");
+    const confirmButton = document.querySelector("#confirmBtn");
+
+    
+    //show dialog
+    showDialogBox.addEventListener(("click"), () => {
+        bookDialogBox.showModal();
+    });
+
+    //function works without this line
+    confirmButton.value = inputArray;
+
+    //when the dialog closes
+    bookDialogBox.addEventListener("close", (e) => {
+
+        let titleField = document.querySelector("#title").value;
+        let authorField = document.querySelector("#author").value;
+        let pagesField = parseInt(document.querySelector("#pages").value);
+        let readField = document.querySelector("#read").value;
+
+        inputArray.push(titleField, authorField, pagesField, readField);
+        console.log(inputArray[0])
+
+        let userBook = new Book (inputArray[0], inputArray[1], inputArray[2], inputArray[3]);
+        console.log(inputArray[0])
+        inputArray = [];
+        myLibrary.push(userBook);
+        cardsContainer.textContent = "";
+        displayBooks();
+
+        console.log(myLibrary);
+      });
+    
+      //when i click the submit button, close the modal
+      //and pass the inputArray as the return value
+      //could also pass confirmButton
+      confirmButton.addEventListener("click", (event) => {
+        // We don't want to submit this fake form
+        event.preventDefault(); 
+        bookDialogBox.close(inputArray); // Have to send the inputArray value here.
+      });
+    
+
+	console.log(myLibrary);
+    return myLibrary;
+    
+};
+
+addToLibrary();
+
+
