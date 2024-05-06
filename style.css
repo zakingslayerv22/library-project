@@ -16,6 +16,10 @@
     
 }
 
+input {
+    display: block;
+}
+
 .title-div {
     border: 1px solid black;
     

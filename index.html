@@ -5,20 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="javascript.js" defer></script>
+    <!-- <script src="javascript2.js" defer></script> -->
     <title>Document</title>
 </head>
 <body>
-    <form action="" id="input-form">
-        <input type="text" id="title" placeholder="Title" value="Julius Caesar">
-        <input type="text" id="author" placeholder="Author" value="William Shakespeare">
-        <input type="number" id="pages" placeholder="Pages" value="308">
-        <input type="text" id="read" placeholder="Read" value="yes">
-        <!-- <button type="button" id="submit">Submit</button> -->
-    </form>
+
+    <dialog id="bookDialog">
+        <form action="" id="input-form">
+            <input type="text" id="title" placeholder="Title" value="Julius Caesar">
+            <input type="text" id="author" placeholder="Author" value="William Shakespeare">
+            <input type="number" id="pages" placeholder="Pages" value="308">
+            <input type="text" id="read" placeholder="Read" value="yes">
+
+            <button type="button" id="confirmBtn">Confirm</button>
+           
+        </form>
+    </dialog>
+
+     <button type="button" id="showDialog">Show Dialog</button>
 
     <div class="container">
         <div class="books"></div>
-        </div>
     </div>
+
+
+
+    
 </body>
 </html>
