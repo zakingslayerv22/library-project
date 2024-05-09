@@ -43,6 +43,13 @@ function displayBooks() {
         readDiv.classList.add("read-div");
         bookCard.appendChild(readDiv);
 
+        //delete button
+
+        const deleteButton = document.createElement("button")
+        deleteButton.textContent = "Delete"
+        deleteButton.classList.add("delete-button")
+        bookCard.appendChild(deleteButton);
+
         cardsContainer.appendChild(bookCard);
     } 
 }

@@ -36,3 +36,7 @@ input {
 .read-div {
     border: 1px solid black;
 }
+
+.delete-button {
+    color: blueviolet;
+}
