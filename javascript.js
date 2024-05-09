@@ -53,7 +53,7 @@ function displayBooks() {
         //give each delete button an attribute
         
         deleteButton.dataset.arrayIndex = `${index}`;
-        
+
         let bookIndex = deleteButton.dataset.arrayIndex;
 
         bookCard.appendChild(deleteButton);
@@ -65,6 +65,9 @@ function displayBooks() {
             // get the attribute that was clicked on
             console.log(bookIndex);
             myLibrary.splice(bookIndex, 1); 
+
+            cardsContainer.textContent = "";
+            displayBooks();
             console.log(myLibrary);
         });
     } 
