@@ -11,6 +11,7 @@ const book1 = new Book("A Clash of Kings", "George R.R Martin", 761, "yes");
 const book2 = new Book("A Storm of Swords", "George R.R Martin", 973, "yes");
 let cardsContainer;
 
+
 myLibrary.push(book1, book2)
 
 
@@ -22,11 +23,7 @@ function displayBooks() {
 
         const bookCard = document.createElement("div");
         bookCard.classList.add("book-card");
-
-        //give each card an an attribute
         
-        bookCard.dataset.arrayIndex = `${index}`;
-
         const titleDiv = document.createElement("div");
         titleDiv.textContent = book.title;
         titleDiv.classList.add("title-div");
@@ -47,21 +44,36 @@ function displayBooks() {
         readDiv.classList.add("read-div");
         bookCard.appendChild(readDiv);
 
-        
-
-
         //delete button
 
-        const deleteButton = document.createElement("button")
+        let deleteButton = document.createElement("button")
         deleteButton.textContent = "Delete"
         deleteButton.classList.add("delete-button")
+
+        //give each delete button an attribute
+        
+        deleteButton.dataset.arrayIndex = `${index}`;
+        
+        let bookIndex = deleteButton.dataset.arrayIndex;
+
         bookCard.appendChild(deleteButton);
 
         cardsContainer.appendChild(bookCard);
+
+        deleteButton.addEventListener("click", () => {
+            // confirm (`Do you want to delete \n ${book.name}`)
+            // get the attribute that was clicked on
+            console.log(bookIndex);
+            myLibrary.splice(bookIndex, 1); 
+            console.log(myLibrary);
+        });
     } 
 }
 
+
+
 displayBooks();
+
 
 
 function addToLibrary() {
