@@ -15,13 +15,17 @@ myLibrary.push(book1, book2)
 
 
 function displayBooks() {
-    for (var book of myLibrary) {
+    for (const [index, book] of myLibrary.entries()) {
         console.log(book.author);
 
         cardsContainer = document.querySelector(".books");
 
         const bookCard = document.createElement("div");
         bookCard.classList.add("book-card");
+
+        //give each card an an attribute
+        
+        bookCard.dataset.arrayIndex = `${index}`;
 
         const titleDiv = document.createElement("div");
         titleDiv.textContent = book.title;
@@ -42,6 +46,9 @@ function displayBooks() {
         readDiv.textContent = book.read;
         readDiv.classList.add("read-div");
         bookCard.appendChild(readDiv);
+
+        
+
 
         //delete button
 
