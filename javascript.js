@@ -7,8 +7,22 @@ function Book(title, author, pages, read) {
     this.read = read;
 }
 
+Book.prototype.toggleRead = function () {
+    if (this.read === "read") {
+        this.read = "unread";
+    } else if (this.read === "unread") {
+        this.read = "read";
+    }
+
+    //toggle boolean status
+    // this.read = !this.read;
+}
+
 const book1 = new Book("A Clash of Kings", "George R.R Martin", 761, "read");
 const book2 = new Book("A Storm of Swords", "George R.R Martin", 973, "unread");
+// book1.toggleRead();
+
+
 let cardsContainer;
 
 
