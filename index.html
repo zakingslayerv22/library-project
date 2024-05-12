@@ -4,18 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="javascript.js" defer></script>
-    <!-- <script src="javascript2.js" defer></script> -->
+    <!-- <script src="javascript.js" defer></script> -->
+    <script src="javascript2.js" defer></script>
     <title>Document</title>
 </head>
 <body>
 
     <dialog id="bookDialog">
         <form action="" id="input-form">
-            <input type="text" id="title" placeholder="Title" value="Julius Caesar">
+            <input type="text" id="title" placeholder="Title" value="Julius Caesar" required>
             <input type="text" id="author" placeholder="Author" value="William Shakespeare">
             <input type="number" id="pages" placeholder="Pages" value="308">
-            <input type="text" id="read" placeholder="Read" value="yes">
+            <!-- <input type="text" id="read" placeholder="Read" value="yes"> -->
+            <fieldset>
+                <legend>Have your read this book<label for="read"></legend>
+                    <label for="read">Yes
+                        <input type="radio" id="read" name="read-status" value="read">
+                    </label>
+
+                    <label for="unread">No
+                        <input type="radio" id="unread" name="read-status" value="unread">
+                    </label>
+            </fieldset>
 
             <button type="button" id="confirmBtn">Confirm</button>
             <button type="button" id="closeBtn">Cancel</button>
