@@ -7,8 +7,8 @@ function Book(title, author, pages, read) {
     this.read = read;
 }
 
-const book1 = new Book("A Clash of Kings", "George R.R Martin", 761, "yes");
-const book2 = new Book("A Storm of Swords", "George R.R Martin", 973, "yes");
+const book1 = new Book("A Clash of Kings", "George R.R Martin", 761, "read");
+const book2 = new Book("A Storm of Swords", "George R.R Martin", 973, "unread");
 let cardsContainer;
 
 
@@ -103,9 +103,11 @@ function addToLibrary() {
             let titleField = document.querySelector("#title").value;
             let authorField = document.querySelector("#author").value;
             let pagesField = parseInt(document.querySelector("#pages").value);
-            let readField = document.querySelector("#read").value;
+            let selectReadStatus = document.querySelector('input[name=read-status]:checked').value;
+            // console.log(radioButtons);
 
-            inputArray.push(titleField, authorField, pagesField, readField);
+
+            inputArray.push(titleField, authorField, pagesField, selectReadStatus);
             console.log(inputArray[0])
 
             let userBook = new Book (inputArray[0], inputArray[1], inputArray[2], inputArray[3]);
