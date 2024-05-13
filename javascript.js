@@ -18,7 +18,7 @@ const book1 = new Book("A Clash of Kings", "George R.R Martin", 761, "read");
 const book2 = new Book("A Storm of Swords", "George R.R Martin", 973, "unread");
 // book1.toggleRead();
 
-console.log (book1.toggleRead);
+console.log (book1);
 let cardsContainer;
 
 
@@ -117,11 +117,14 @@ function addToLibrary() {
     const showDialogBox = document.querySelector("#showDialog");
     const confirmButton = document.querySelector("#confirmBtn");
     const closeButton = document.querySelector("#closeBtn");
+    const inputForm = document.querySelector("#input-form");
+
     bookDialogBox.returnValue = "initialValue";
     confirmButton.value = "thereIsUserInput";
 
     //show dialog
     showDialogBox.addEventListener(("click"), () => {
+        inputForm.reset();
         bookDialogBox.showModal();
     });
 
