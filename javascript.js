@@ -8,12 +8,8 @@ function Book(title, author, pages, read) {
 }
 
 Book.prototype.toggleRead = function () {
-    if (this.read === "read") {
-        this.read = "unread";
-    } else if (this.read === "unread") {
-        this.read = "read";
-    }
-
+    this.read = this.read === "read" ? "unread" : "read";
+    
     //toggle boolean status
     // this.read = !this.read;
 }
