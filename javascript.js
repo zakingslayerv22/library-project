@@ -22,7 +22,7 @@ const book1 = new Book("A Clash of Kings", "George R.R Martin", 761, "read");
 const book2 = new Book("A Storm of Swords", "George R.R Martin", 973, "unread");
 // book1.toggleRead();
 
-
+console.log (book1.toggleRead);
 let cardsContainer;
 
 
@@ -74,20 +74,39 @@ function displayBooks() {
 
         cardsContainer.appendChild(bookCard);
 
+        function rebuildCardsContainer() {
+            cardsContainer.textContent = "";
+            displayBooks();
+        }
+
         deleteButton.addEventListener("click", () => {
             // confirm (`Do you want to delete \n ${book.name}`)
             // get the attribute that was clicked on
             console.log(bookIndex);
             myLibrary.splice(bookIndex, 1); 
 
-            cardsContainer.textContent = "";
-            displayBooks();
+            rebuildCardsContainer();
             console.log(myLibrary);
         });
+
+        //toggleButton 
+        const toggleButton = document.createElement("button");
+
+        toggleButton.textContent = 
+                                book.read === "read" ? "Read" : "Unread";
+        
+        toggleButton.classList.add("toggle-button");
+        bookCard.appendChild(toggleButton);
+
+        toggleButton.addEventListener("click", () => {
+            book.toggleRead();
+            
+            console.log (myLibrary);
+            rebuildCardsContainer();
+        });
+
     } 
 }
-
-
 
 displayBooks();
 
