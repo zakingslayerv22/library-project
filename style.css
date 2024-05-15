@@ -1,3 +1,17 @@
+@font-face {
+    font-family: Roboto-Bold;
+    src: url(assets/fonts/Roboto-Bold.ttf);
+}
+
+@font-face {
+    font-family: Roboto-Regular;
+    src: url(assets/fonts/Roboto-Regular.ttf);
+}
+
+* {
+    border: 1px solid black;
+}
+
 html {
     margin: 0;
     padding: 0;
@@ -8,13 +22,25 @@ body {
     grid-template-rows: auto 1fr auto;
     height: 100vh;
 }
+
+.header {
+    grid-row: 1;
+}
+
+.main {
+    grid-row: 2;
+}
+
+.footer {
+    grid-row: 3;
+}
 .books {
     border: 1px solid black;
     padding: 2rem;
     gap: 3rem;
     justify-items: center;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
 
 .book-card {
