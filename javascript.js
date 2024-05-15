@@ -114,32 +114,41 @@ function addToLibrary() {
 
     //dialog
     const bookDialogBox = document.querySelector("#bookDialog");
-    const showDialogBox = document.querySelector("#showDialog");
+    const showDialogButton = document.querySelector("#showDialog");
     const confirmButton = document.querySelector("#confirmBtn");
     const closeButton = document.querySelector("#closeBtn");
     const inputForm = document.querySelector("#input-form");
-
     bookDialogBox.returnValue = "initialValue";
     confirmButton.value = "thereIsUserInput";
 
     //show dialog
-    showDialogBox.addEventListener(("click"), () => {
+    showDialogButton.addEventListener(("click"), () => {
         inputForm.reset();
         bookDialogBox.showModal();
     });
+
+    const titleField = document.querySelector("#title");
+    let titleFieldValue;
+    titleField.setCustomValidity(''); 
+
+    const authorField = document.querySelector("#author");
+    let authorFieldValue;
+
+    const pagesField = document.querySelector("#pages");
+    let pagesFieldValue;
 
     
     //when the dialog closes
     bookDialogBox.addEventListener("close", (e) => {
         if (bookDialogBox.returnValue === "thereIsUserInput") {
-            let titleField = document.querySelector("#title").value;
-            let authorField = document.querySelector("#author").value;
-            let pagesField = parseInt(document.querySelector("#pages").value);
+            titleFieldValue = titleField.value;
+            authorFieldValue = authorField.value;
+            pagesFieldValue = parseInt(pagesField.value);
             let selectReadStatus = document.querySelector('input[name=read-status]:checked').value;
             // console.log(radioButtons);
 
 
-            inputArray.push(titleField, authorField, pagesField, selectReadStatus);
+            inputArray.push(titleFieldValue, authorFieldValue, pagesFieldValue, selectReadStatus);
             console.log(inputArray[0])
 
             let userBook = new Book (inputArray[0], inputArray[1], inputArray[2], inputArray[3]);
@@ -163,9 +172,26 @@ function addToLibrary() {
       //and pass the inputArray as the return value
       //could also pass confirmButton
       confirmButton.addEventListener("click", (event) => {
-        // We don't want to submit this fake form
-        event.preventDefault(); 
-        bookDialogBox.close(confirmButton.value); // Have to send the inputArray value here.
+        
+        if (titleField.checkValidity() && authorField.checkValidity() && pagesField.checkValidity()) {
+            // We don't want to submit this fake form
+            event.preventDefault(); 
+            bookDialogBox.close(confirmButton.value); // Have to send the inputArray value here.
+        }
+        else {
+            return;  
+        }
+
+        //Even white space
+        // if (titleField.value.trim() === "") {
+        //     event.preventDefault(); 
+        //     titleField.setCustomValidity("Book title cannot be empty.")
+        // } else {
+        //     console.log("hello");
+        //     titleField.setCustomValidity("");
+        //     return
+        // }
+        
       });
 
       closeButton.addEventListener("click", () => {
@@ -180,5 +206,6 @@ function addToLibrary() {
 };
 
 addToLibrary();
+
 
 

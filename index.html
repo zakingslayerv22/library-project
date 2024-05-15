@@ -12,14 +12,14 @@
 
     <dialog id="bookDialog">
         <form action="" id="input-form">
-            <input type="text" id="title" placeholder="Title" required>
-            <input type="text" id="author" placeholder="Author" >
-            <input type="number" id="pages" placeholder="Pages" >
+            <input type="text" id="title" placeholder="Title" minlength="5" required>
+            <input type="text" id="author" placeholder="Author" minlength="3" required>
+            <input type="number" id="pages" placeholder="Pages" min="10" required>
             <!-- <input type="text" id="read" placeholder="Read" value="yes"> -->
             <fieldset>
                 <legend>Have your read this book<label for="read"></legend>
                     <label for="read">Yes
-                        <input type="radio" id="read" name="read-status" value="read">
+                        <input type="radio" id="read" name="read-status" value="read" checked>
                     </label>
 
                     <label for="unread">No
@@ -27,8 +27,9 @@
                     </label>
             </fieldset>
 
-            <button type="button" id="confirmBtn">Confirm</button>
+            <button type="submit" id="confirmBtn">Confirm</button>
             <button type="button" id="closeBtn">Cancel</button>
+            <button type="submit" id="submit"></button>
            
         </form>
     </dialog>
