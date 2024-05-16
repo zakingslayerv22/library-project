@@ -66,7 +66,10 @@ function displayBooks() {
         bookCard.appendChild(pagesDiv);
 
         const readDiv = document.createElement("div");
-        readDiv.textContent = book.read;
+        readDiv.textContent = 
+                        book.read === "read" ?
+                         "Completed this book" :
+                          "Not read this book";
         readDiv.classList.add("read-div");
         bookCard.appendChild(readDiv);
 
