@@ -45,7 +45,7 @@ function displayBooks() {
         bookCard.appendChild(authorDiv);
 
         const pagesDiv = document.createElement("div");
-        pagesDiv.textContent = book.pages;
+        pagesDiv.textContent = `${book.pages} pages`;
         pagesDiv.classList.add("pages-div");
         bookCard.appendChild(pagesDiv);
 
