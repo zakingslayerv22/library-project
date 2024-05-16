@@ -34,6 +34,22 @@ function displayBooks() {
         const bookCard = document.createElement("div");
         bookCard.classList.add("book-card");
         
+        //delete button
+
+        let deleteButton = document.createElement("div")
+        // deleteButton.textContent = "Delete"
+        deleteButton.classList.add("delete-icon")
+
+        //give each delete button an attribute
+        
+        deleteButton.dataset.arrayIndex = `${index}`;
+
+        let bookIndex = deleteButton.dataset.arrayIndex;
+
+        bookCard.appendChild(deleteButton);
+
+        
+
         const titleDiv = document.createElement("div");
         titleDiv.textContent = book.title;
         titleDiv.classList.add("title-div");
@@ -53,20 +69,6 @@ function displayBooks() {
         readDiv.textContent = book.read;
         readDiv.classList.add("read-div");
         bookCard.appendChild(readDiv);
-
-        //delete button
-
-        let deleteButton = document.createElement("button")
-        deleteButton.textContent = "Delete"
-        deleteButton.classList.add("delete-button")
-
-        //give each delete button an attribute
-        
-        deleteButton.dataset.arrayIndex = `${index}`;
-
-        let bookIndex = deleteButton.dataset.arrayIndex;
-
-        bookCard.appendChild(deleteButton);
 
         cardsContainer.appendChild(bookCard);
 
