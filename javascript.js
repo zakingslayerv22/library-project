@@ -96,6 +96,12 @@ function displayBooks() {
         toggleButton.textContent = 
                                 book.read === "read" ? "Read" : "Unread";
         
+
+        book.read === "read" ?  
+                    toggleButton.classList.add("read-button") 
+                    : toggleButton.classList.add("unread-button");
+
+
         toggleButton.classList.add("toggle-button");
         bookCard.appendChild(toggleButton);
 
