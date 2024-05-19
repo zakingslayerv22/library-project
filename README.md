@@ -1,6 +1,6 @@
 # library-project
 
-The library project is a project that lets us try our hands on object constructors, objects and prototypes. 
+The library project is a project that let's us try our hands on object constructors, objects and prototypes. 
 
 It is a simple project that receives user input, creates a new instance of an object based off that input, and displays it on the page as a 'book'.
 
