@@ -8,10 +8,10 @@
     src: url(assets/fonts/Roboto-Regular.ttf);
 }
 
-/* * {
-    border: 1px solid black;
+* {
+    /* border: 1px solid black; */
     box-sizing: border-box;
-} */
+}
 
 
 
@@ -78,6 +78,17 @@ body {
     font-size: 1rem;
 }
 
+.footer a {
+    color: inherit;
+}
+
+.footer a:hover {
+    font-weight: bolder;
+    text-decoration: underline;
+    color: inherit
+
+}
+
 .books {
     /* border: 1px solid black; */
     padding: 1.5rem 4rem;
@@ -128,6 +139,7 @@ body {
     font-size: 1rem;
     border-radius: 5px;
     border: none;
+    
 }
 
 .read-button {
@@ -153,6 +165,10 @@ dialog {
     border-radius: 10px;
     background-color: #F0EEF1;
     border: none;
+}
+
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 dialog > p {
@@ -252,16 +268,16 @@ input[type="radio"]::before {
     
 }
 
-#closeBtn {
+#cancelBtn {
     background-color: #E58C8C;
 }
 
-#closeBtn:hover {
+#cancelBtn:hover {
     background-color: #d68585;
 }
 
 @media screen and (max-width: 600px) {
-    /* CSS styles for small screens */
+    /* CSS styles for small screens - less than 600px*/
 
     .header {
         padding: 0 2rem 0 0;
@@ -281,25 +297,6 @@ input[type="radio"]::before {
         font-size: 1rem;
     } 
 }
-
-
-
-/* .title-div {
-    border: 1px solid black;
-    
-}
-
-.author-div {
-    border: 1px solid black;
-}
-
-.pages-div {
-    border: 1px solid black;
-}
-
-.read-div {
-    border: 1px solid black;
-} */
 
 
 

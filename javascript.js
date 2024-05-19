@@ -81,7 +81,7 @@ function displayBooks() {
         }
 
         deleteButton.addEventListener("click", () => {
-            // confirm (`Do you want to delete \n ${book.name}`)
+
             // get the attribute that was clicked on
             console.log(bookIndex);
             myLibrary.splice(bookIndex, 1); 
@@ -127,7 +127,7 @@ function addToLibrary() {
     const bookDialogBox = document.querySelector("#bookDialog");
     const showDialogButton = document.querySelector("#showDialog");
     const confirmButton = document.querySelector("#confirmBtn");
-    const closeButton = document.querySelector("#closeBtn");
+    const cancelButton = document.querySelector("#cancelBtn");
     const inputForm = document.querySelector("#input-form");
     bookDialogBox.returnValue = "initialValue";
     confirmButton.value = "thereIsUserInput";
@@ -205,7 +205,7 @@ function addToLibrary() {
         
       });
 
-      closeButton.addEventListener("click", () => {
+      cancelButton.addEventListener("click", () => {
         bookDialogBox.close();
       })
     
