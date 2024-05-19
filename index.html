@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="javascript.js" defer></script>
     <!-- <script src="javascript2.js" defer></script> -->
-    <title>Document</title>
+    <title>Library</title>
 </head>
 <body>
 <div class="header">
@@ -20,16 +20,15 @@
             <input type="text" id="author" placeholder="Author" minlength="3" required>
             <input type="number" id="pages" placeholder="Pages" min="10" required>
             <!-- <input type="text" id="read" placeholder="Read" value="yes"> -->
-            <fieldset>
-                <legend>Have your read this book?<label for="read"></legend>
-                    <label for="read">Yes</label>
-                    <input type="radio" id="read" name="read-status" value="read" checked>
-
-
-                    <label for="unread">No</label>
-                    <input type="radio" id="unread" name="read-status" value="unread">
-
-            </fieldset>
+            <div class="radio-input">
+                <fieldset>
+                    <legend>Have your read this book?<label for="read"></legend>
+                        <label for="read">Yes</label>
+                        <input type="radio" id="read" name="read-status" value="read" checked>
+                        <label for="unread">No</label>
+                        <input type="radio" id="unread" name="read-status" value="unread">
+                </fieldset>
+            </div>
 
             <div class="dialog-buttons">
                 <button type="submit" id="confirmBtn">Confirm</button>

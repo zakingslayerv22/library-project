@@ -96,7 +96,6 @@ body {
     border-radius: 10px;
     padding: 1rem;
     background-color: #FFFBFB;
-    
 }
 
 .delete-icon {
@@ -139,6 +138,16 @@ body {
     background-color: #E58C8C;
 }
 
+
+.read-button:hover {
+    background-color: #88d985;
+    
+}
+
+.unread-button:hover {
+    background-color: #d68585;
+}
+
 dialog {
     padding: 1rem 1.5rem;
     border-radius: 10px;
@@ -166,6 +175,12 @@ input[type=text], input[type=number] {
     font-size: 1.1rem;
     outline: none;
     border: none;
+    border-radius: 5px;
+}
+
+.radio-input {
+    background-color: #fff;
+    padding: 1rem;
     border-radius: 5px;
 }
 
@@ -232,8 +247,17 @@ input[type="radio"]::before {
     background-color: #8FE58C;
 }
 
+#confirmBtn:hover {
+    background-color: #88d985;
+    
+}
+
 #closeBtn {
     background-color: #E58C8C;
+}
+
+#closeBtn:hover {
+    background-color: #d68585;
 }
 
 @media screen and (max-width: 600px) {
