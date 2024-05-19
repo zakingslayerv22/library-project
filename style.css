@@ -8,10 +8,10 @@
     src: url(assets/fonts/Roboto-Regular.ttf);
 }
 
-* {
+/* * {
     border: 1px solid black;
     box-sizing: border-box;
-}
+} */
 
 
 
@@ -28,7 +28,11 @@ body {
     display: flex;
     justify-content: space-between;
     gap: 2rem;
+    position: relative;
     padding: 0rem 3rem 0rem 4rem;
+    box-shadow: 4px 4px 6px 2px rgb(219, 220, 220);
+    -webkit-box-shadow: 4px 4px 6px 2px rgb(219, 220, 220);
+    -moz-box-shadow: 4px 4px 6px 2px rgb(219, 220, 220);
 }
 
 .header > h1 {
@@ -44,11 +48,17 @@ body {
     padding: 1rem;
     border: none;
     border-radius: 10px;
+    background-color: rgb(241, 242, 243);
    
+}
+
+#showDialog:hover {
+    background-color: rgb(218, 216, 216);
 }
 
 .main {
     grid-row: 2;
+    background-color: #F0EEF1;
 }
 
 .main > p {
