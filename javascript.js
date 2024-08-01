@@ -1,17 +1,21 @@
 const myLibrary = [];
 
-function Book(title, author, pages, read) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
-}
+//refactor to use class instead 
 
-Book.prototype.toggleRead = function () {
-    this.read = this.read === "read" ? "unread" : "read";
-    
-    //toggle boolean status
-    // this.read = !this.read;
+class Book {
+    constructor (title, author, pages, read) {
+        this.title =  title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+    }
+
+    toggleRead () {
+        this.read = this.read === "read" ? "unread" : "read";
+
+        //toggle boolean status
+        // this.read = !this.read;
+    }
 }
 
 const book1 = new Book("A Clash of Kings", "George R.R Martin", 761, "read");
